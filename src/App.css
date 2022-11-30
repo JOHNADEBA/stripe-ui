@@ -1,38 +1,212 @@
 .App {
-  text-align: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+	padding: 1rem 0;
+	width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.5rem;
+	margin-bottom: 5rem;
+	margin: auto;
+}
+.main-menu,
+.main-menu-cont {
+  font-size: 1rem;
+	color: rgb(251, 251, 251);
+	cursor: pointer;
+}
+.main-menu,
+p {
+	margin: 0;
+}
+.bars {
+	display: none;
+	cursor: pointer;
+}
+.bars:hover {
+	color: rgba(7, 7, 7, 0.5);
+}
+main {
+	width: 80%;
+	margin: 10rem auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.left {
+	width: 40rem;
+	margin-right: 3rem;
+}
+
+main h2 {
+	font-size: 5rem;
+}
+main p {
+	font-size: 1.2rem;
+}
+
+.start-btn,
+.signin-btn {
+	background: black;
+	color: white;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 0.2rem;
+	cursor: pointer;
+	margin-top: 0.9rem;
+}
+.signin-btn {
+	margin-top: 0;
+}
+.start-btn:hover,
+.signin-btn:hover {
+	background: rgba(7, 7, 7, 0.5);
+}
+
+.submenu {
+  background: #fff;
+  box-shadow:  0 5px 15px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: none;
+  padding: 2rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s linear;
+}
+.submenu::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #fff;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.submenu.show {
+  display: block;
+}
+.submenu h4{
+  margin-top: 0;
+}
+.submenu-center {
+  display: grid;
+  gap: 0.25rem 2rem;
+}
+.col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.submenu h4 {
+  text-transform: capitalize;
+  margin-bottom: 1.5rem;
+}
+.submenu-center a {
+  cursor: pointer;
+  width: 10rem;
+  display: block;
+  color: hsl(209, 61%, 16%);
+  text-transform: capitalize;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-decoration: none;
+}
+.submenu-center svg {
+  color: hsl(210, 22%, 49%);
+  margin-right: 1rem;
+}
+.mobile-sub-menu {
+	display: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
+@media screen and (max-width: 765px) {
+	.App {
+		width: 150%;
+	}
+	.bars, .mobile-sub-menu {
+		display: block;
+	}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	.main-menu,
+	.signin-btn,
+	.right {
+		display: none;
+	}
+	main {
+		margin: 5rem 2rem 1rem 2rem;
+	}
+	.left {
+		margin-right: 0;
+	}
+	main h2 {
+		font-size: 3rem;
+		width: 23rem;
+		max-width: 23rem;
+	}
+	main p {
+		line-height: 1.5rem;
+		font-size: 0.9rem;
+	}
+	.mobile-cont {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: white;
+		width: 100%;
+		height: 100vh;
+		border-radius: 0.3rem;
+		box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+	}
+	.mobile-bars {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+		margin: 0rem;
+		font-size: 2.5rem;
+	}
+	.mobile-sub-menu {
+		margin:7rem 0 0 2rem ;
+	}
+	article {
+		margin-bottom: 1.5rem;
+		text-transform: capitalize;
+	}
+	article h4 {
+		margin: 0 0 0.8rem 0;
+	}
+	.mobile-a {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+	.mobile-a a {
+		margin-right: 2rem;
+		margin-bottom: 1rem;
+		text-decoration: none;
+		text-transform: capitalize;
+		color: #617d98;
+		font-weight: bold;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.mobile-a a span {
+		margin-left: 0.5rem;
+	}
 }
